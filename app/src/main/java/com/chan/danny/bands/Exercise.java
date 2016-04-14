@@ -1,5 +1,7 @@
 package com.chan.danny.bands;
 
+import android.os.Build;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,6 +14,7 @@ public class Exercise {
         private int mNumSets;
         private Set<Integer> mColors;
         private String mName;
+        private int mOrder;
 
         public Builder() {
             mColors = new HashSet<>();
@@ -35,11 +38,17 @@ public class Exercise {
             return this;
         }
 
+        public Builder setOrder(int order) {
+            mOrder = order;
+            return this;
+        }
+
         public Exercise build() {
             Exercise e = new Exercise();
             e.mNumSets = mNumSets;
             e.mColors = mColors;
             e.mName = mName;
+            e.mOrder = mOrder;
             return e;
         }
     }
@@ -47,6 +56,7 @@ public class Exercise {
     private int mNumSets;
     private Set<Integer> mColors;
     private String mName;
+    private int mOrder;
 
     private Exercise() {
 
@@ -62,5 +72,9 @@ public class Exercise {
 
     public String getName() {
         return mName;
+    }
+
+    public int getOrder() {
+        return mOrder;
     }
 }
